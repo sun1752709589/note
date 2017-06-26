@@ -59,7 +59,7 @@ docker export <container id> > /sun/docker_data/docker_image/dev_golang_image_20
 
 
 
-docker run -d --name mysql -v /data/mysql_db:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=wXBPDJso90GEho889 mysql
+docker run -d --name mysql -v /data/mysql_db:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=. mysql
 
 docker run -p 6378:6379 --name redis -d redis:latest
 
