@@ -7,6 +7,7 @@ network.host: 0.0.0.0
 http.port: 9200
 network.publish_host: 10.26.92.178
 discovery.zen.ping.unicast.hosts: ["10.26.92.178","10.26.250.63"]
+#path.data: /path/to/data1,/path/to/data2
 
 cluster.name: elasticsearch
 node.name: elas2
