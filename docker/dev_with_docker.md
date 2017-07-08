@@ -51,6 +51,23 @@ kibana:
   docker run --name kibana -e ELASTICSEARCH_URL=http://192.168.16.6:9200 -p 5601:5601 --net=hadoop -d kibana
 Grafana:
   docker run --name grafana -p 3000:3000 -d grafana/grafana
+timescaledb:
+  docker run -d \
+  --name timescaledb \
+  -v /home/vagrant/elas/timescaledb:/var/lib/postgresql/data \
+  -p 5432:5432 \
+  -e PGDATA=/var/lib/postgresql/data/timescaledb \
+  timescale/timescaledb postgres \
+  -cshared_preload_libraries=timescaledb
+
+neo4j:
+  docker run -d -p 7474:7474 -p 7687:7687 -v /sun/docker_data/neo4j:/data --name neo4j neo4j
+
+
+
+
+
+
 
 docker export <container id> > /sun/docker_data/docker_image/dev_golang_image_20161127.tar
 
