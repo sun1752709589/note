@@ -43,4 +43,7 @@ output {
   # }
 }
 # nohup command &> /dev/null &
+# 自动加载配置文件
+# logstash –f apache.config --config.reload.automatic
+# logstash -f config_file --auto-reload --reload-interval 2 
 ```
