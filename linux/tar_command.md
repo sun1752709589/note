@@ -36,3 +36,12 @@ tar -jcvf archive_name.tar.bz2 directory_to_compress
 当然，你也可以用这个命令来捏住解包的路径：
 tar -jxvf archive_name.tar.bz2 -C /tmp/extract_here/
 ```
+### tar
+```
+tar -cvf log.tar log2012.log 仅打包，不压缩！
+tar -zcvf log.tar.gz log2012.log 打包后，以 gzip 压缩
+tar -jcvf log.tar.bz2 log2012.log 打包后，以 bzip2 压缩
+压　缩：tar -jcv -f filename.tar.bz2 要被压缩的文件或目录名称
+查　询：tar -jtv -f filename.tar.bz2
+解压缩：tar -jxv -f filename.tar.bz2 -C 欲解压缩的目录
+```
