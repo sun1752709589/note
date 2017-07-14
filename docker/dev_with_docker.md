@@ -44,7 +44,7 @@ cloudera:
 logstash:
   docker run -i -t -v /sun/logstash:/logstash --net=hadoop --name logstash -d logstash /bin/bash
 elasticsearch:
-  docker run -d -p 9200:9200 -p 9300:9300 --net=hadoop --name elasticsearch elasticsearch -Etransport.host=0.0.0.0 -Ediscovery.zen.minimum_master_nodes=1
+  docker run -d -p 9200:9200 -p 9300:9300 --name elas elasticsearch:5.3.2 -Etransport.host=0.0.0.0 -Ediscovery.zen.minimum_master_nodes=1
 kibana:
   docker run --name kibana -e ELASTICSEARCH_URL=http://172.28.128.7:9200 -p 5601:5601 -d kibana
   docker run --name kibana -e ELASTICSEARCH_URL=http://10.26.92.178:9200 -p 5601:5601 -d kibana
