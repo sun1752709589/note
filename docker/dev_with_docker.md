@@ -62,7 +62,9 @@ timescaledb:
 
 neo4j:
   docker run -d -p 7474:7474 -p 7687:7687 -v /sun/docker_data/neo4j:/data --name neo4j neo4j
-
+cassandra:
+  docker run --name cassandra -v /sun/docker_data/cassandra:/var/lib/cassandra -d cassandra
+  docker run --name cassandra -d cassandra
 
 
 
