@@ -46,9 +46,8 @@ logstash:
 elasticsearch:
   docker run -d -p 9200:9200 -p 9300:9300 --name elas elasticsearch:5.3.2 -Etransport.host=0.0.0.0 -Ediscovery.zen.minimum_master_nodes=1
 kibana:
-  docker run --name kibana -e ELASTICSEARCH_URL=http://172.28.128.7:9200 -p 5601:5601 -d kibana
-  docker run --name kibana -e ELASTICSEARCH_URL=http://10.26.92.178:9200 -p 5601:5601 -d kibana
-  docker run --name kibana -e ELASTICSEARCH_URL=http://192.168.16.6:9200 -p 5601:5601 --net=hadoop -d kibana
+  docker run --name kibana -e ELASTICSEARCH_URL=http://172.28.128.7:9200 -p 5601:5601 -v /data/projects/kibana_data:/data -d kibana
+  docker run --name kibana -e ELASTICSEARCH_URL=http://10.26.92.178:9200 -p 5601:5601 -v /data/projects/kibana_data:/data -d kibana
 Grafana:
   docker run --name grafana -p 3000:3000 -d grafana/grafana
 timescaledb:
@@ -64,7 +63,7 @@ neo4j:
   docker run -d -p 7474:7474 -p 7687:7687 -v /sun/docker_data/neo4j:/data --name neo4j neo4j
 cassandra:
   docker run --name cassandra -v /sun/docker_data/cassandra:/var/lib/cassandra -d cassandra
-  docker run --name cassandra -d cassandra
+  docker run -p 9042:9042 --name cassandra -d cassandra
 
 
 

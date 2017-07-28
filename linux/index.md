@@ -10,6 +10,8 @@ pgrep -f keyword
 ### linux创建sudo用户
 adduser username
 usermod -aG sudo username
+### 列出大于50MB的文件
+find / -type f -size +50000k -exec ls -lh {} \; | awk '{ print $9 ": " $5 }'
 ### sudo免密码
 vi /etc/sudoers
 root    ALL=(ALL:ALL) ALL
