@@ -33,6 +33,9 @@ nohup command &> /dev/null &
 nginx auth conf
 docker pull nginx
 docker run --name nginx -v /home/data/nginx/conf.d:/etc/nginx/conf.d -v /home/projects:/projects -p 80:80 -d nginx
-
+```
+### 节点加新磁盘
+```
+docker run -d -p 9200:9200 -p 9300:9300 -v /esdata/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml -v /data/elas_data:/usr/share/elasticsearch/data -v /esdata/es_data2:/usr/share/elasticsearch/data2 -v /esdata/elas_plugins:/usr/share/elasticsearch/plugins --name elas-slave1 elasticsearch:5.3.2
 
 ```
