@@ -8,6 +8,7 @@ http.port: 9200
 network.publish_host: 10.26.92.178
 discovery.zen.ping.unicast.hosts: ["10.26.92.178","10.26.250.63"]
 #path.data: /path/to/data1,/path/to/data2
+action.destructive_requires_name: true
 
 cluster.name: elasticsearch
 node.name: elas2
@@ -16,7 +17,8 @@ network.host: 0.0.0.0
 http.port: 9200
 network.publish_host: 10.26.250.63
 discovery.zen.ping.unicast.hosts: ["10.26.92.178","10.26.250.63"]
-
+#path.data: /path/to/data1,/path/to/data2
+action.destructive_requires_name: true
 
 nohup logstash -f elk_up.conf &> /dev/null &
 nohup logstash -f elk_down.conf &> /dev/null &
