@@ -3,7 +3,7 @@ require 'pry'
 # lock '3.5.0'
 
 set :application, 'rails5'
-set :repo_url, 'git@git.huantengsmart.com:sunyafei/rails5.git'
+set :repo_url, 'git@git.xxx.com:sunyafei/rails5.git'
 set :branch, 'master'
 set :deploy_to, '/home/deployer/projects/rails5'
 set :linked_files, %w{config/sidekiq.yml config/database.yml config/secrets.yml config/cable.yml config/puma.rb config/settings.yml config/schedule.yml}
